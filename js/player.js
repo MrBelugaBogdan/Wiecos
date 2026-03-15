@@ -1,7 +1,10 @@
 import * as THREE from 'three';
-import { PointerLockControls } from 'https://unpkg.com/three@0.150.1/examples/jsm/controls/PointerLockControls.js';
+// Тепер шлях короткий завдяки importmap
+import { PointerLockControls } from 'three/addons/controls/PointerLockControls.js';
 import { world } from './physics.js';
 import { scene } from './world.js';
+
+// ... (решта коду без змін)
 
 export let playerBody, playerMesh, camera, controls;
 let keys = {};
