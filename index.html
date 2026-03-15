@@ -1,5 +1,25 @@
-<script type="module">
-  import { init } from './js/main.js';
-  // Запускаємо гру тільки після завантаження сторінки
-  window.onload = init;
-</script>
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Wiecos Engine</title>
+    <style> body { margin: 0; overflow: hidden; background-color: #000; } </style>
+</head>
+<body>
+    <script src="https://unpkg.com/cannon@0.6.2/build/cannon.min.js"></script>
+
+    <script type="importmap">
+    {
+        "imports": {
+            "three": "https://unpkg.com/three@0.150.1/build/three.module.js",
+            "three/addons/": "https://unpkg.com/three@0.150.1/examples/jsm/"
+        }
+    }
+    </script>
+
+    <script type="module">
+        import { init } from './js/main.js';
+        window.onload = init;
+    </script>
+</body>
+</html>
