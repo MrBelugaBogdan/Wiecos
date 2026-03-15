@@ -1,14 +1,20 @@
+// js/main.js
 import * as THREE from 'three';
 import { initWorld, scene } from './world.js';
 import { initPlayer, updatePlayer, camera } from './player.js';
 import { updatePhysics } from './physics.js';
 
-const renderer = new THREE.WebGLRenderer();
-renderer.setSize(window.innerWidth, window.innerHeight);
-document.body.appendChild(renderer.domElement);
+let renderer;
 
-initWorld();
-initPlayer();
+export function init() {
+    renderer = new THREE.WebGLRenderer({ antialias: true });
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    document.body.appendChild(renderer.domElement);
+
+    initWorld();
+    initPlayer();
+    animate();
+}
 
 function animate() {
     requestAnimationFrame(animate);
@@ -16,4 +22,3 @@ function animate() {
     updatePlayer();
     renderer.render(scene, camera);
 }
-animate();
